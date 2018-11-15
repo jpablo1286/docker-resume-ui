@@ -8,13 +8,15 @@ import { MaterialModule } from './material.module';
 import { LoginComponent } from './auth/login/login.component';
 import { ConsoleComponent } from './profile/console/console.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DegreeComponent } from './profile/degree/degree.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ConsoleComponent
+    ConsoleComponent,
+    DegreeComponent
   ],
   imports: [
     BrowserAnimationsModule,

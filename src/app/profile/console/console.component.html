@@ -1,22 +1,52 @@
 <mat-toolbar color="primary" fxLayoutGap="10px">
   <mat-toolbar-row fxLayoutGap="10px">
-    <img class="toolbarIcon" src="assets/img/glasses.png" />
-    <span fxShow.gt-sm="true" fxShow="false"><button mat-button><b>Consola</b></button></span>
+    <a class="toolbarIcon" routerLink="/console/{{acId}}"><img class="toolbarIcon"src="assets/img/glasses.png" /></a>
+    <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId=='de85c87a97aaab5ea8b85dc7932c8310'"><button mat-button><b>Personal Data</b></button></span>
     <span fxShow.gt-sm="true" fxShow="false"><button mat-button><b>Campañas</b></button></span>
     <span fxShow.gt-sm="true" fxShow="false"><button  mat-button><b>Metricas</b></button></span>
     <span class="fill">
     </span>
     <span>
-      <button align="end" mat-button [matMenuTriggerFor]="langmenu"><mat-icon>account_box</mat-icon> Prexenx</button>
+      <button align="end" mat-button [matMenuTriggerFor]="langmenu"><mat-icon>account_box</mat-icon> Contact me</button>
       <mat-menu #langmenu="matMenu">
-        <button mat-menu-item><mat-icon>settings</mat-icon> Configuracion</button>
-        <button mat-menu-item><mat-icon>power_settings_new</mat-icon> Cerrar Sesion</button>
+        <button mat-menu-item><mat-icon>email</mat-icon>jpablo.localhost@gmail.com</button>
+        <button  onclick="location.href='https://api.whatsapp.com/send?phone=17868285584';" mat-menu-item><mat-icon>sms</mat-icon>Whatsapp: +1 (786) 828 5584</button>
       </mat-menu>
     </span>
   </mat-toolbar-row>
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxShow.gt-sm="false" fxShow="true">
-    <span><button mat-button><b>Consola</b></button></span>
+    <span *ngIf="acId=='de85c87a97aaab5ea8b85dc7932c8310'"><button mat-button><b>Personal Data</b></button></span>
     <span><button mat-button><b>Campañas</b></button></span>
     <span><button  mat-button><b>Metricas</b></button></span>
   </mat-toolbar-row>
 </mat-toolbar>
+<section fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px" style="margin:50px;">
+  <section class="summary">
+  <mat-card>
+  <mat-card-header>
+    <mat-card-title>Juan Pablo Rivera V.</mat-card-title>
+    <mat-card-subtitle>Site Reliabilty Engenieer</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/img/profilePhoto.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p style="text-align:justify">
+      Proactive professional with wide experience at infrastructure field, his work use the DevOps approach to give robustes, efficient and effective solutions. Electronic Engineer with deep knowledge on linux OS, deploying complex solutions from scratch. due to the experience on develop field, has skills on html, css, php, javascript, python, perl and others.
+    </p>
+  </mat-card-content>
+</mat-card>
+</section>
+<section class="consolePanel">
+  <mat-card style="width:100%;">
+    <mat-card-header>
+      <mat-card-title>Academic Qualifications</mat-card-title>
+      <mat-card-subtitle>Degrees</mat-card-subtitle>
+  </mat-card-header>
+     <mat-card-content>
+       <mat-grid-list cols="2" >
+        <mat-grid-tile *ngFor="let degree of degrees"><app-degree [degreeName]="degree.name" [degreeDegree]="degree.degree" [degreeInstitution]="degree.institution" [degreeDate]="degree.date" [degreeUrl]="degree.url"></app-degree></mat-grid-tile>
+      </mat-grid-list>
+     </mat-card-content>
+  </mat-card>
+</section>
+
+</section>

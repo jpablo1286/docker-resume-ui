@@ -15,9 +15,9 @@
   <mat-card-title>Juan Pablo Rivera Velasco online resume</mat-card-title>
   <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field *ngIf="!acId==''">
-      <input type="text" matInput [(ngModel)]="acId" readonly  placeholder="Token for unloock personal data" ngModel name="acIdF"  #acIdF="ngModel"/>
+      <input type="text" matInput [(ngModel)]="acId" readonly  placeholder="Token for unlock personal data" ngModel name="acIdF"  #acIdF="ngModel"/>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Go to the resume</button>
+    <button mat-raised-button color="primary" routerLink="/console/{{acId}}">Go to the resume</button>
   </form>
 </mat-card>
 </section>

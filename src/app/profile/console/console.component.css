@@ -14,7 +14,7 @@ mat-card{
   display: flex;
   flex: 3;
 }
-.phone{
+.summary{
   display: flex;
   flex: 1;
 }
