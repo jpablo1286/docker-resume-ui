@@ -1,0 +1,27 @@
+mat-form-field {
+  width: 300px;
+}
+mat-card{
+  width: 300px;
+}
+.fill {
+  flex: 1 1 auto;
+}
+.toolbarIcon{
+  height: 80%;
+}
+.consolePanel{
+  display: flex;
+  flex: 3;
+}
+.phone{
+  display: flex;
+  flex: 1;
+}
+.basicPhone{
+  display: flex;
+  min-height: 720px;
+}
+.middleContent{
+  display: flex;
+}

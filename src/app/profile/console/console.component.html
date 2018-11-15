@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" fxLayoutGap="10px">
+  <mat-toolbar-row fxLayoutGap="10px">
+    <img class="toolbarIcon" src="assets/img/glasses.png" />
+    <span fxShow.gt-sm="true" fxShow="false"><button mat-button><b>Consola</b></button></span>
+    <span fxShow.gt-sm="true" fxShow="false"><button mat-button><b>Campañas</b></button></span>
+    <span fxShow.gt-sm="true" fxShow="false"><button  mat-button><b>Metricas</b></button></span>
+    <span class="fill">
+    </span>
+    <span>
+      <button align="end" mat-button [matMenuTriggerFor]="langmenu"><mat-icon>account_box</mat-icon> Prexenx</button>
+      <mat-menu #langmenu="matMenu">
+        <button mat-menu-item><mat-icon>settings</mat-icon> Configuracion</button>
+        <button mat-menu-item><mat-icon>power_settings_new</mat-icon> Cerrar Sesion</button>
+      </mat-menu>
+    </span>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxShow.gt-sm="false" fxShow="true">
+    <span><button mat-button><b>Consola</b></button></span>
+    <span><button mat-button><b>Campañas</b></button></span>
+    <span><button  mat-button><b>Metricas</b></button></span>
+  </mat-toolbar-row>
+</mat-toolbar>

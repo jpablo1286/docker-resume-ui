@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <img class="toolbarIcon" src="assets/img/glasses.png" />
+
+  <span class="fill">
+  </span>
+  <span>
+    <button align="end" mat-button [matMenuTriggerFor]="langmenu">English</button>
+    <mat-menu #langmenu="matMenu">
+      <button mat-menu-item>English</button>
+    </mat-menu>
+  </span>
+</mat-toolbar>
+<section class="signup-form" fxLayout="column" fxLayoutAlign="start center">
+  <mat-card>
+  <mat-card-title>Juan Pablo Rivera Velasco online resume</mat-card-title>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field *ngIf="!acId==''">
+      <input type="text" matInput [(ngModel)]="acId" readonly  placeholder="Token for unloock personal data" ngModel name="acIdF"  #acIdF="ngModel"/>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Go to the resume</button>
+  </form>
+</mat-card>
+</section>
