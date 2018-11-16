@@ -9,6 +9,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { ConsoleComponent } from './profile/console/console.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DegreeComponent } from './profile/degree/degree.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DegreeComponent } from './profile/degree/degree.component';
     MaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
