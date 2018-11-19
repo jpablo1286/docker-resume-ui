@@ -10,6 +10,9 @@ import { ConsoleComponent } from './profile/console/console.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DegreeComponent } from './profile/degree/degree.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CertificateComponent } from './profile/certificate/certificate.component';
+import { SkillsComponent } from './profile/skills/skills.component';
+import { LanguageComponent } from './profile/language/language.component';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     ConsoleComponent,
-    DegreeComponent
+    DegreeComponent,
+    CertificateComponent,
+    SkillsComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserAnimationsModule,

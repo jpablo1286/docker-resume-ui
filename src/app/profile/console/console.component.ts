@@ -9,26 +9,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConsoleComponent implements OnInit {
   acId: string;
-  urlBase="http://localhost:8000/";
-  name: string;
-  currentPosition: string;
-  summary: string;
+  key="de85c87a97aaab5ea8b85dc7932c8310";
+  urlBase="http://192.168.28.142:8000/";
+  summary: any;
   private sub: any;
   degrees: any;
+  certificates: any;
   constructor(private route: ActivatedRoute, public snackBar: MatSnackBar,private httpClient: HttpClient) { }
-
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
     this.acId = params['acId'];
     this.httpClient.get(this.urlBase + 'summary/').subscribe((res)=>{
-        this.name=res.name;
-        this.currentPosition=res.currentPosition;
-        this.summary=res.summary;
+        this.summary=res;
     });
     this.httpClient.get(this.urlBase +'degree/').subscribe((res)=>{
         this.degrees=res;
     });
-    if (this.acId != "de85c87a97aaab5ea8b85dc7932c8310")
+    this.httpClient.get(this.urlBase +'certificate/').subscribe((res)=>{
+        this.certificates=res;
+    });
+    if (this.acId != this.key)
     {
       this.snackBar.open('Empty or invalid token: Personal data locked','',{duration: 5000});
     }
