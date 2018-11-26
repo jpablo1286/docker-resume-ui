@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CertificateComponent } from './profile/certificate/certificate.component';
 import { SkillsComponent } from './profile/skills/skills.component';
 import { LanguageComponent } from './profile/language/language.component';
+import { MyWorkComponent } from './profile/mywork/mywork.component';
+import { AwardComponent } from './profile/award/award.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { LanguageComponent } from './profile/language/language.component';
     DegreeComponent,
     CertificateComponent,
     SkillsComponent,
-    LanguageComponent
+    LanguageComponent,
+    MyWorkComponent,
+    AwardComponent
   ],
   imports: [
     BrowserAnimationsModule,

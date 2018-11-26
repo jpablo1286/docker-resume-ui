@@ -3,17 +3,18 @@ import { ActivatedRoute } from '@angular/router';
 import {MatSnackBar} from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 @Component({
-  selector: 'app-skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  selector: 'app-mywork',
+  templateUrl: './mywork.component.html',
+  styleUrls: ['./mywork.component.css']
 })
-export class SkillsComponent implements OnInit {
+export class MyWorkComponent implements OnInit {
   acId: string;
   key="de85c87a97aaab5ea8b85dc7932c8310";
   urlBase="http://192.168.28.142:8000/";
-  skills: any;
+  expiriences: any;
   summary={"name":"","currentPosition":"","summary":""};
-  languages: any;
+  projects: any;
+  repos: any;
   private sub: any;
   constructor(private route: ActivatedRoute, public snackBar: MatSnackBar,private httpClient: HttpClient) { }
   ngOnInit() {

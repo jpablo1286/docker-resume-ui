@@ -11,10 +11,11 @@ export class ConsoleComponent implements OnInit {
   acId: string;
   key="de85c87a97aaab5ea8b85dc7932c8310";
   urlBase="http://192.168.28.142:8000/";
-  summary: any;
+  summary={"name":"","currentPosition":"","summary":""};
   private sub: any;
   degrees: any;
   certificates: any;
+  awards: any;
   constructor(private route: ActivatedRoute, public snackBar: MatSnackBar,private httpClient: HttpClient) { }
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -27,6 +28,9 @@ export class ConsoleComponent implements OnInit {
     });
     this.httpClient.get(this.urlBase +'certificate/').subscribe((res)=>{
         this.certificates=res;
+    });
+    this.httpClient.get(this.urlBase +'award/').subscribe((res)=>{
+        this.awards=res;
     });
     if (this.acId != this.key)
     {
