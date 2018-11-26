@@ -10,8 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class ConsoleComponent implements OnInit {
   acId: string;
   key="de85c87a97aaab5ea8b85dc7932c8310";
-  urlBase="http://192.168.28.142:8000/";
-  summary={"name":"","currentPosition":"","summary":""};
+  urlBase="http://172.22.12.225:8000/";
+  summary: any;
   private sub: any;
   degrees: any;
   certificates: any;

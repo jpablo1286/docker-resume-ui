@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class SkillsComponent implements OnInit {
   acId: string;
   key="de85c87a97aaab5ea8b85dc7932c8310";
-  urlBase="http://192.168.28.142:8000/";
+  urlBase="http://172.22.12.225:8000/";
   skills: any;
-  summary={"name":"","currentPosition":"","summary":""};
+  summary: any;
   languages: any;
   private sub: any;
   constructor(private route: ActivatedRoute, public snackBar: MatSnackBar,private httpClient: HttpClient) { }

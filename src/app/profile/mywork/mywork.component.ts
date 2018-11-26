@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class MyWorkComponent implements OnInit {
   acId: string;
   key="de85c87a97aaab5ea8b85dc7932c8310";
-  urlBase="http://192.168.28.142:8000/";
+  urlBase="http://172.22.12.225:8000/";
   expiriences: any;
-  summary={"name":"","currentPosition":"","summary":""};
+  summary:any;
   projects: any;
   repos: any;
   private sub: any;
@@ -23,12 +23,12 @@ export class MyWorkComponent implements OnInit {
     this.httpClient.get(this.urlBase + 'summary/').subscribe((res)=>{
         this.summary=res;
     });
-    this.httpClient.get(this.urlBase + 'skill/').subscribe((res)=>{
-        this.skills=res;
+    this.httpClient.get(this.urlBase + 'project/').subscribe((res)=>{
+        this.projects=res;
     });
 
-    this.httpClient.get(this.urlBase + 'language/').subscribe((res)=>{
-        this.languages=res;
+    this.httpClient.get(this.urlBase + 'code/').subscribe((res)=>{
+        this.repos=res;
     });
 
     if (this.acId != this.key)
