@@ -15,6 +15,11 @@ import { SkillsComponent } from './profile/skills/skills.component';
 import { LanguageComponent } from './profile/language/language.component';
 import { MyWorkComponent } from './profile/mywork/mywork.component';
 import { AwardComponent } from './profile/award/award.component';
+import { ExpirienceComponent } from './profile/expirience/expirience.component';
+import { ProjectComponent } from './profile/project/project.component';
+import { CodeComponent } from './profile/code/code.component';
+import { PersonalDataComponent } from './profile/personaldata/personaldata.component';
+import { FieldComponent } from './profile/field/field.component';
 
 
 @NgModule({
@@ -27,7 +32,12 @@ import { AwardComponent } from './profile/award/award.component';
     SkillsComponent,
     LanguageComponent,
     MyWorkComponent,
-    AwardComponent
+    AwardComponent,
+    ExpirienceComponent,
+    ProjectComponent,
+    CodeComponent,
+    PersonalDataComponent,
+    FieldComponent
   ],
   imports: [
     BrowserAnimationsModule,

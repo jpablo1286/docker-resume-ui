@@ -1,0 +1,40 @@
+mat-form-field {
+  width: 300px;
+}
+.fill {
+  flex: 1 1 auto;
+}
+.toolbarIcon{
+  height: 80%;
+}
+.consolePanel{
+  display: flex;
+  flex: 3;
+}
+.summary{
+  display: flex;
+  flex: 1;
+}
+.basicPhone{
+  display: flex;
+  min-height: 720px;
+}
+.middleContent{
+  display: flex;
+}
+.mainComponent{
+ width: 100%;
+
+}
+.profile-img-full{
+ border-radius: 50%;
+ width:256px;
+ height: 256px;
+ margin-left:32px;
+}
+.profile-img-mobile{
+ border-radius: 50%;
+ width:240px;
+ height: 240px;
+ margin-left:30px;
+}

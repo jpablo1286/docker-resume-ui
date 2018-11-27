@@ -3,7 +3,7 @@
     <a class="toolbarIcon" routerLink="/console/{{acId}}"><img class="toolbarIcon"src="assets/img/glasses.png" /></a>
     <span fxShow.gt-sm="true" fxShow="false"><button mat-button routerLink="/skills/{{acId}}"><b>Skills</b></button></span>
     <span fxShow.gt-sm="true" fxShow="false"><button  mat-button routerLink="/mywork/{{acId}}" name="mywork"><b>My Work</b></button></span>
-    <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId==key"><button mat-button><b>Personal Data</b></button></span>
+    <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId==key"><button mat-button routerLink="/personaldata/{{acId}}"><b>Personal Data</b></button></span>
     <span class="fill">
     </span>
     <span>
@@ -18,7 +18,7 @@
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxShow.gt-sm="false" fxShow="true">
     <span><button mat-button routerLink="/skills/{{acId}}"><b>Skills</b></button></span>
     <span><button  mat-button routerLink="/mywork/{{acId}}" name="mywork"><b>My Work</b></button></span>
-    <span *ngIf="acId==key"><button mat-button><b>Personal Data</b></button></span>
+    <span *ngIf="acId==key"><button mat-button routerLink="/personaldata/{{acId}}"><b>Personal Data</b></button></span>
   </mat-toolbar-row>
 </mat-toolbar>
 <section fxShow.gt-sm="true" fxShow="false" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" style="margin:50px;">
@@ -40,26 +40,38 @@
 <section class="consolePanel" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
   <mat-card style="width:100%;">
     <mat-card-header>
-      <mat-card-title>Skills</mat-card-title>
-     </mat-card-header>
+      <mat-card-title>Expirience</mat-card-title>
+    </mat-card-header>
      <mat-card-content>
-       <mat-chip-list>
-        <mat-chip color="primary" selected *ngFor="let skill of skills">{{skill.name}}</mat-chip>
-      </mat-chip-list>
+       <mat-grid-list cols="2" rowHeight="250px" >
+        <mat-grid-tile *ngFor="let expirience of expiriences"><app-expirience [expirienceName]="expirience.name" [expirienceInstitution]="expirience.institution" [expirienceDescription]="expirience.description" [expirienceDate]="expirience.date"></app-expirience></mat-grid-tile>
+      </mat-grid-list>
      </mat-card-content>
-     <mat-toolbar><button mat-button matTooltip="If you know what it is, try it in a shell"><h4>$ curl {{urlBase}}skill/</h4></button></mat-toolbar>
+     <mat-toolbar><button mat-button matTooltip="If you know what it is, try it in a shell"><h4>$ curl {{urlBase}}expirience/</h4></button></mat-toolbar>
   </mat-card>
 
   <mat-card style="width:100%;">
     <mat-card-header>
-      <mat-card-title>Languages</mat-card-title>
-  </mat-card-header>
-     <mat-card-content>
-       <mat-grid-list cols="2" rowHeight="250px" >
-        <mat-grid-tile *ngFor="let language of languages"><app-language [languageName]="language.name" [languageReading]="language.reading" [languageWriting]="language.written" [languageSpoken]="language.spoken"></app-language></mat-grid-tile>
+      <mat-card-title>Projects</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+       <mat-grid-list cols="2" rowHeight="380px" >
+        <mat-grid-tile *ngFor="let project of projects"><app-project [projectName]="project.name" [projectDescription]="project.description" [projectInstitution]="project.institution" [projectDate]="project.date"></app-project></mat-grid-tile>
       </mat-grid-list>
-     </mat-card-content>
-     <mat-toolbar><button mat-button matTooltip="If you know what it is, try it in a shell"><h4>$ curl {{urlBase}}language/</h4></button></mat-toolbar>
+    </mat-card-content>
+    <mat-toolbar><button mat-button matTooltip="If you know what it is, try it in a shell"><h4>$ curl {{urlBase}}project/</h4></button></mat-toolbar>
+  </mat-card>
+
+  <mat-card style="width:100%;">
+    <mat-card-header>
+      <mat-card-title>Code</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+       <mat-grid-list cols="2" rowHeight="300px" >
+        <mat-grid-tile *ngFor="let code of repos"><app-code [codeName]="code.name" [codeDescription]="code.description" [codeUrl]="code.url"></app-code></mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+    <mat-toolbar><button mat-button matTooltip="If you know what it is, try it in a shell"><h4>$ curl {{urlBase}}code/</h4></button></mat-toolbar>
   </mat-card>
 </section>
 
@@ -68,28 +80,40 @@
 <section fxShow.gt-sm="false" fxShow="true" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px" style="margin:50px;">
 
 <section  fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px">
-  <mat-card style="width:300px;" >
+  <mat-card style="width:300px;">
     <mat-card-header>
-      <mat-card-title>Skills</mat-card-title>
-     </mat-card-header>
+      <mat-card-title>Expirience</mat-card-title>
+  </mat-card-header>
      <mat-card-content>
-       <mat-chip-list>
-        <mat-chip color="primary" selected *ngFor="let skill of skills">{{skill.name}}</mat-chip>
-      </mat-chip-list>
+       <mat-grid-list cols="1" rowHeight="250px" >
+        <mat-grid-tile *ngFor="let expirience of expiriences"><app-expirience [expirienceName]="expirience.name" [expirienceInstitution]="expirience.institution" [expirienceDescription]="expirience.description" [expirienceDate]="expirience.date"></app-expirience></mat-grid-tile>
+      </mat-grid-list>
      </mat-card-content>
-     <button mat-button matTooltip="If you know what it is, try it in a shell" color="disabled"><h5>$ curl {{urlBase}}skill/</h5></button>
+     <button mat-button matTooltip="If you know what it is, try it in a shell" color="disabled"><h5>$ curl {{urlBase}}expirience/</h5></button>
   </mat-card>
 
   <mat-card style="width:300px;">
     <mat-card-header>
-      <mat-card-title>Languages</mat-card-title>
-  </mat-card-header>
+      <mat-card-title>Projects</mat-card-title>
+    </mat-card-header>
      <mat-card-content>
-       <mat-grid-list cols="1" rowHeight="250px" >
-        <mat-grid-tile *ngFor="let language of languages"><app-language [languageName]="language.name" [languageReading]="language.reading" [languageWriting]="language.written" [languageSpoken]="language.spoken"></app-language></mat-grid-tile>
+       <mat-grid-list cols="1" rowHeight="380px" >
+        <mat-grid-tile *ngFor="let project of projects"><app-project [projectName]="project.name" [projectDescription]="project.description" [projectInstitution]="project.institution" [projectDate]="project.date"></app-project></mat-grid-tile>
       </mat-grid-list>
      </mat-card-content>
-     <button mat-button matTooltip="If you know what it is, try it in a shell" color="disabled"><h5>$ curl {{urlBase}}language/</h5></button>
+     <button mat-button matTooltip="If you know what it is, try it in a shell" color="disabled"><h5>$ curl {{urlBase}}project/</h5></button>
+  </mat-card>
+
+  <mat-card style="width:300px;">
+    <mat-card-header>
+      <mat-card-title>Code</mat-card-title>
+  </mat-card-header>
+     <mat-card-content>
+       <mat-grid-list cols="1" rowHeight="300px" >
+        <mat-grid-tile *ngFor="let code of repos"><app-code [codeName]="code.name" [codeDescription]="code.description" [codeUrl]="code.url"></app-code></mat-grid-tile>
+      </mat-grid-list>
+     </mat-card-content>
+     <button mat-button matTooltip="If you know what it is, try it in a shell" color="disabled"><h5>$ curl {{urlBase}}code/</h5></button>
   </mat-card>
 </section>
 

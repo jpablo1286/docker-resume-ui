@@ -3,7 +3,7 @@
     <a class="toolbarIcon" routerLink="/console/{{acId}}"><img class="toolbarIcon"src="assets/img/glasses.png" /></a>
     <span fxShow.gt-sm="true" fxShow="false"><button mat-button routerLink="/skills/{{acId}}"><b>Skills</b></button></span>
     <span fxShow.gt-sm="true" fxShow="false"><button  mat-button routerLink="/mywork/{{acId}}" name="mywork"><b>My Work</b></button></span>
-    <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId==key"><button mat-button><b>Personal Data</b></button></span>
+    <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId==key"><button mat-button routerLink="/personaldata/{{acId}}"><b>Personal Data</b></button></span>
     <span class="fill">
     </span>
     <span>
@@ -18,7 +18,7 @@
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxShow.gt-sm="false" fxShow="true">
     <span><button mat-button routerLink="/skills/{{acId}}"><b>Skills</b></button></span>
     <span><button  mat-button routerLink="/mywork/{{acId}}" name="mywork"><b>My Work</b></button></span>
-    <span *ngIf="acId==key"><button mat-button><b>Personal Data</b></button></span>
+    <span *ngIf="acId==key"><button mat-button routerLink="/personaldata/{{acId}}"><b>Personal Data</b></button></span>
   </mat-toolbar-row>
 </mat-toolbar>
 <section fxShow.gt-sm="true" fxShow="false" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" style="margin:50px;">
