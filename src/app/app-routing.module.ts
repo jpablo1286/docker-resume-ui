@@ -5,6 +5,7 @@ import { ConsoleComponent } from './profile/console/console.component';
 import { SkillsComponent } from './profile/skills/skills.component';
 import { MyWorkComponent } from './profile/mywork/mywork.component';
 import { PersonalDataComponent } from './profile/personaldata/personaldata.component';
+import { PrintComponent} from './profile/print/print.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,10 @@ const routes: Routes = [
   { path: 'mywork', component: MyWorkComponent },
   { path: 'mywork/:acId', component: MyWorkComponent },
   { path: 'personaldata', component: PersonalDataComponent },
-  { path: 'personaldata/:acId', component: PersonalDataComponent }
+  { path: 'personaldata/:acId', component: PersonalDataComponent },
+  { path: 'print', component: PrintComponent },
+  { path: 'print/:acId', component: PrintComponent }
+
 ];
 
 @NgModule({

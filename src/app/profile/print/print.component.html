@@ -1,0 +1,105 @@
+<section class="page firstPage" >
+  <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
+  <mat-toolbar color="primary" class="myheader">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" style="margin-top:50px;" >
+      <section>
+        <h1>{{summary.name}}</h1>
+        <h3>{{summary.currentPosition}}</h3>
+      </section>
+      <span class="print-spacer"></span>
+      <span><img mat-card-image class="profile-img-full" src="assets/img/profile_rec.jpeg" alt="Profile Photo" onload="window.print()"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-toolbar fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" color="link">
+   <span *ngIf="acId==key" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"><mat-icon>mail</mat-icon><h3>jpablo.localhost@gmail.com</h3></span>
+   <span *ngIf="acId==key" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"><mat-icon>phone</mat-icon><h3>+573207707825</h3></span>
+   <span *ngIf="acId==key" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"><mat-icon>room</mat-icon><h3>Cali, Colombia</h3></span>
+  </mat-toolbar>
+  <section class="summary">
+    {{summary.summary}}
+  </section>
+  <mat-divider style="width:650px;"></mat-divider>
+  <mat-grid-list cols="4" rowHeight="100px" style="width:95%;">
+    <mat-grid-tile colspan="2" rowspan="5" style="vertical-align:top;">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">WORK EXPIRIENCE</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-pexpirience [expirienceName]="expirience.name" [expirienceInstitution]="expirience.institution" [expirienceDate]="expirience.date" [expirienceDescription]="expirience.description" *ngFor="let expirience of expiriences"></app-pexpirience>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="5">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">SKILLS</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <mat-chip-list>
+          <mat-chip color="primary" selected *ngFor="let skill of skills">{{skill.name}}</mat-chip>
+        </mat-chip-list>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="2">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">EDUCATION</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-pdegree [degreeName]="degree.name" [degreeInstitution]="degree.institution" [degreeDate]="degree.date" *ngFor="let degree of degrees"></app-pdegree>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="2">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">LANGUAGES</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-planguage [languageName]="language.name" [languageWritten]="language.written" [languageReading]="language.reading" [languageSpoken]="language.spoken" *ngFor="let language of languages"></app-planguage>
+      </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-toolbar color="primary" class="footer">
+    <h2 style="font-size:16px;">Online resume: </h2><a href="https://juanrivera.org" target="_blank" class="mylink">https://juanrivera.org</a>
+    <span class="print-spacer"></span>
+    <a href="https://www.linkedin.com/in/juan-pablo-rivera-velasco/" target="_blank" class="mylink">Linkedin Profile</a>
+    <span style="width:20px;"></span>
+    <h2 style="font-size:16px;">1/2</h2>
+  </mat-toolbar>
+ </section>
+</section>
+
+
+<section class="page" >
+  <section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px"  >
+        <h3>{{summary.name}}</h3>
+        <span class="print-spacer"></span>
+        <h3>{{summary.currentPosition}}</h3>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-grid-list cols="4" rowHeight="106px" style="width:95%;">
+    <mat-grid-tile colspan="2" rowspan="8" style="vertical-align:top;">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">HONORS AND AWARDS</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-paward [awardName]="award.name" [awardInstitution]="award.institution" [awardDate]="award.date" [awardDescription]="award.description" *ngFor="let award of awards"></app-paward>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="3">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">CERTIFICATES</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-pcertificate [certificateName]="certificate.name" [certificateInstitution]="certificate.institution" [certificateDate]="certificate.date" *ngFor="let certificate of certificates"></app-pcertificate>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="6">
+      <section fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" class="section">
+        <span class="myPrimary">PROJECTS</span>
+        <mat-divider class="myPrimary" style="width:95%;" ></mat-divider>
+        <app-pproject [projectName]="project.name" [projectInstitution]="project.institution" [projectDate]="project.date" [projectDescription]="project.description" *ngFor="let project of projects"></app-pproject>
+      </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-toolbar color="primary" class="footer" style="height:32px;">
+    <h2 style="font-size:16px;">Online resume: </h2><a href="https://juanrivera.org" target="_blank" class="mylink">https://juanrivera.org</a>
+    <span class="print-spacer"></span>
+    <a href="https://www.linkedin.com/in/juan-pablo-rivera-velasco/" target="_blank" class="mylink">Linkedin Profile</a>
+    <span style="width:20px;"></span>
+    <h2 style="font-size:16px;">2/2</h2>
+  </mat-toolbar>
+ </section>
+</section>

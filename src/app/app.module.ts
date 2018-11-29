@@ -20,6 +20,13 @@ import { ProjectComponent } from './profile/project/project.component';
 import { CodeComponent } from './profile/code/code.component';
 import { PersonalDataComponent } from './profile/personaldata/personaldata.component';
 import { FieldComponent } from './profile/field/field.component';
+import { PrintComponent } from './profile/print/print.component';
+import { PexpirienceComponent } from './print/pexpirience/pexpirience.component';
+import { PdegreeComponent } from './print/pdegree/pdegree.component';
+import { PlanguageComponent } from './print/planguage/planguage.component';
+import { PawardComponent } from './print/paward/paward.component';
+import { PcertificateComponent } from './print/pcertificate/pcertificate.component';
+import { PprojectComponent } from './print/pproject/pproject.component';
 
 
 @NgModule({
@@ -37,7 +44,14 @@ import { FieldComponent } from './profile/field/field.component';
     ProjectComponent,
     CodeComponent,
     PersonalDataComponent,
-    FieldComponent
+    FieldComponent,
+    PrintComponent,
+    PexpirienceComponent,
+    PdegreeComponent,
+    PlanguageComponent,
+    PawardComponent,
+    PcertificateComponent,
+    PprojectComponent
   ],
   imports: [
     BrowserAnimationsModule,

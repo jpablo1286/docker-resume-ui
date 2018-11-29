@@ -6,6 +6,7 @@
     <span fxShow.gt-sm="true" fxShow="false" *ngIf="acId==key"><button mat-button routerLink="/personaldata/{{acId}}"><b>Personal Data</b></button></span>
     <span class="fill">
     </span>
+    <span><a  mat-button routerLink="/print/{{acId}}" target="_blank"><mat-icon>printer</mat-icon></a></span>
     <span>
       <button align="end" mat-button [matMenuTriggerFor]="langmenu"><mat-icon>account_box</mat-icon> Contact me</button>
       <mat-menu #langmenu="matMenu">
