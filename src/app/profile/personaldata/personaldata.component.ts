@@ -9,8 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PersonalDataComponent implements OnInit {
   acId: string;
-  key="";
-  urlBase="http://api.juanrivera.org:8000/";
+  key="bf5e23edf951ce1e0291feda6a911253";
+  urlBase="https://api.juanrivera.org/";
   summary:any;
   personaldata: any;
   httpOptions:any;
@@ -38,7 +38,7 @@ export class PersonalDataComponent implements OnInit {
     else{
       this.httpOptions = {
       headers: new HttpHeaders({
-        'X-Apikey':  'token'
+        'X-Apikey':  '763f133964cef21f7afe8fce17b755f0ce608828'
        })
       };
       this.snackBar.open('Valid token: Personal data unlocked','',{duration: 5000});

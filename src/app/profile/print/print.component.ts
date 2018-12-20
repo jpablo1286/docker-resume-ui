@@ -9,8 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PrintComponent implements OnInit {
   acId: string;
-  key="";
-  urlBase="http://api.juanrivera.org:8000/";
+  key="bf5e23edf951ce1e0291feda6a911253";
+  urlBase="https://api.juanrivera.org/";
   summary:any;
   skills:any;
   personaldata: any;
@@ -44,7 +44,7 @@ export class PrintComponent implements OnInit {
     else{
       this.httpOptions = {
       headers: new HttpHeaders({
-        'X-Apikey':  'token'
+        'X-Apikey':  '763f133964cef21f7afe8fce17b755f0ce608828'
        })
       };
     }

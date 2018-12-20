@@ -13,6 +13,5 @@ RUN npm install --save @angular/material @angular/cdk @angular/animations
 RUN npm install --save hammerjs
 RUN npm install --save @angular/flex-layout
 RUN rm -rf src
-COPY src /app/my-project/src
 EXPOSE 4200
-CMD ng serve --host 0.0.0.0 --disable-host-check
+CMD ng serve --host 0.0.0.0

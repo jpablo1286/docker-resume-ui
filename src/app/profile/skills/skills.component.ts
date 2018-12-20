@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SkillsComponent implements OnInit {
   acId: string;
-  key="";
-  urlBase="http://api.juanrivera.org:8000/";
+  key="bf5e23edf951ce1e0291feda6a911253";
+  urlBase="https://api.juanrivera.org/";
   skills: any;
   summary: any;
   languages: any;
