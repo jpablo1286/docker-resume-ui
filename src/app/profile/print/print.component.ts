@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PrintComponent implements OnInit {
   acId: string;
   key="bf5e23edf951ce1e0291feda6a911253";
-  urlBase="https://api.juanrivera.org/";
+  urlBase="http://juanrivera.org:8000/";
   summary:any;
   skills:any;
   personaldata: any;
